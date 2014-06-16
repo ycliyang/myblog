@@ -1,0 +1,44 @@
+doctype html
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/blog.css')
+        link(rel='stylesheet', href='/library/bootstrap-3.1.1-dist/css/bootstrap.min.css')
+        //link(rel='stylesheet', href='/library/bootstrap-3.1.1-dist/css/bootstrap-theme.min.css')
+        script(type='javaScript', src='/library/bootstrap-3.1.1-dist/js/bootstrap.min.js')
+    body
+
+        div.blog-masthead
+            div.container
+                nav.blog-nav.blog-header-bar
+                    if home
+                        a(class='blog-nav-item active',href='home') 主页
+                    else
+                        a(class='blog-nav-item',href='home') 主页
+
+                    if onRoad
+                        a(class='blog-nav-item active',href='onRoad') 在路上
+                    else
+                        a(class='blog-nav-item',href='onRoad') 在路上
+
+                    if science
+                        a(class='blog-nav-item active',href='science') 技术宅
+                    else
+                        a(class='blog-nav-item',href='science') 技术宅
+
+                    if aboutMe
+                        a(class='blog-nav-item active',href='aboutMe') 关于我
+                    else
+                        a(class='blog-nav-item',href='aboutMe') 关于我
+
+                    if about
+                        a(class='blog-nav-item active',href='about') 其他
+                    else
+                        a(class='blog-nav-item',href='about') 其他
+
+        div.container.blog-content
+            block content
+        footer
+            div.bFooter.blog-footer
+                p 我的博客，联系我
+                    a(href='http://mail.163.com',target='_bank') lyg_hi@163.com
