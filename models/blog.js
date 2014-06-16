@@ -2,15 +2,17 @@
  * Created by Administrator on 2014/6/16.
  */
 module.exports = function(sequelize, DataTypes) {
-    var Task = sequelize.define('Task', {
-        title: DataTypes.STRING
+    var Blog = sequelize.define('Blog', {
+        title: DataTypes.STRING,
+        content: DataTypes.STRING
     }, {
         classMethods: {
             associate: function(models) {
-                Task.belongsTo(models.User)
+                Blog.belongsTo(models.User);
+                Blog.belongsTo(models.BlogFlag);
             }
         }
     })
 
-    return Task
+    return Blog;
 }

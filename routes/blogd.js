@@ -11,18 +11,29 @@ router.get('/', function(req, res) {
     res.redirect('/blog/home');
 });
 
+router.get("/add",function (req,res){
+    res.render('blog/blog_add', { title: '发表博客',home:true });
+});
+
 router.get('/home', function(req, res) {
-    db.User.findAll({
-        include: [ db.Task ]
-    }).success(function(users) {
-        res.render('blog/blog_indexd', {
-            title: '博客主页',
-            users: users,
-            home:true
-        })
-    })
+//    db.User.findAll({
+//        include: [ db.Task ]
+//    }).success(function(users) {
+//        res.render('blog/blog_indexd', {
+//            title: '博客主页',
+//            users: users,
+//            home:true
+//        })
+//    })
 
 //    res.render('blog/blog_indexd', { title: '博客主页',home:true });
+
+
+    var bgs = db.Blog.findAll({order:[['id',"DESC"]],limit:20});
+
+    res.render('blog/blog_indexd', { title: '博客主页',home:true,blogs:bgs });
+
+
 });
 
 router.get('/onRoad', function(req, res) {

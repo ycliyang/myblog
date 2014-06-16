@@ -1,0 +1,22 @@
+//
+   Created by Administrator on 2014/6/9.
+extends blog_content_layout
+block leftContent
+    script(src='/library/bootstrap-wysiwyg/bootstrap-wysiwyg.js')
+
+    p
+        a(href='home') 主页
+        span &nbsp;&nbsp;/&nbsp;&nbsp;
+        a(href='add') 发表博客
+
+    form(action='',method='post')
+        p
+            div.input-group
+                span.input-group-addon 标题
+                input(class='form-control',type='text',placeholder='请输入标题')
+        p
+            div#editor
+        p
+            button(type='submit',class='btn btn-primary',style='width:200px;float: right;') 发布
+block rightContent
+    h3 导航线信息

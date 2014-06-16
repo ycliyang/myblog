@@ -179,3 +179,13 @@ h6, .h6 {
     font-weight: 500;
     text-decoration: none solid rgb(205, 221, 235);
 }
+
+.left_content{
+    float: left;
+    width: 845px;
+}
+
+.right_content{
+    float: right;
+    width: 290px;
+}

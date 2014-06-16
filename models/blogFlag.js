@@ -2,16 +2,15 @@
  * Created by Administrator on 2014/6/16.
  */
 module.exports = function(sequelize, DataTypes) {
-    var User = sequelize.define('User', {
-        username: DataTypes.STRING
+    var BlogFlag = sequelize.define('BlogFlag', {
+        name: DataTypes.STRING
     }, {
         classMethods: {
             associate: function(models) {
-                User.hasMany(models.Task);
-                User.hasMany(models.Blog);
+                BlogFlag.hasMany(models.Blog);
             }
         }
     })
 
-    return User
+    return BlogFlag
 }

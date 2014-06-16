@@ -5,5 +5,8 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/library/bootstrap-3.1.1-dist/css/bootstrap-theme.min.css')
     script(type='javaScript', src='/library/bootstrap-3.1.1-dist/js/bootstrap.min.js')
+    block extraFile
+
   body
-    block content
+    div.layout_content
+        block content
