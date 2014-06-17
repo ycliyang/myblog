@@ -2,20 +2,22 @@
    Created by Administrator on 2014/6/9.
 extends blog_content_layout
 block leftContent
+    link(rel='stylesheet', href='/library/font-awesome/3.2.1/css/font-awesome.css')
+    script(src="/library/jquery/jquery.hotkeys.js")
     script(src='/library/bootstrap-wysiwyg/bootstrap-wysiwyg.js')
-
+    script(src='/javascripts/blogAdd.js')
     p
         a(href='home') 主页
         span &nbsp;&nbsp;/&nbsp;&nbsp;
         a(href='add') 发表博客
 
-    form(action='',method='post')
+    form(action='addBlog',method='post',onsubmit="blogAddSubmit()")
         p
             div.input-group
                 span.input-group-addon 标题
                 input(class='form-control',type='text',placeholder='请输入标题')
-        p
-            div#editor
+        include ../util/bootstrap_wysiwyg
+
         p
             button(type='submit',class='btn btn-primary',style='width:200px;float: right;') 发布
 block rightContent
