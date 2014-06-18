@@ -172,6 +172,7 @@ h6, .h6 {
     padding-top: 5px;
     min-height: 500px;
 }
+
 .blog-header-bar a{
     font-family: 'Arial Black',bold;
     font-style: normal;
@@ -179,6 +180,20 @@ h6, .h6 {
     font-weight: 500;
     text-decoration: none solid rgb(205, 221, 235);
 }
+
+.bs-callout-info {
+    background-color: #f4f8fa;
+    border-color: #5bc0de;
+}
+.bs-callout {
+    margin: 20px 0;
+    padding: 20px;
+    border-left: 3px solid #eee;
+}
+.bs-callout:hover{
+    border-left: 3px solid #7fb5e4;
+}
+
 
 .left_content{
     float: left;
@@ -188,4 +203,12 @@ h6, .h6 {
 .right_content{
     float: right;
     width: 290px;
+}
+
+.blog_list{
+    font-size: 20px;
+
+}
+.blog_list>div {
+    width: 100% !important;
 }

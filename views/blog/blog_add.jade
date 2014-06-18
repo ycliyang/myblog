@@ -7,18 +7,25 @@ block leftContent
     script(src='/library/bootstrap-wysiwyg/bootstrap-wysiwyg.js')
     script(src='/javascripts/blogAdd.js')
     p
-        a(href='home') 主页
-        span &nbsp;&nbsp;/&nbsp;&nbsp;
-        a(href='add') 发表博客
+    a(href='home') 主页
+    span &nbsp;&nbsp;/&nbsp;&nbsp;
+    a(href='add') 发表博客
 
-    form(action='addBlog',method='post',onsubmit="blogAddSubmit()")
+    form(action='addBlog',method='post',onsubmit="return blogAddSubmit()",name='addBlog')
+        input(type='hidden',name='content')
         p
-            div.input-group
-                span.input-group-addon 标题
-                input(class='form-control',type='text',placeholder='请输入标题')
+        div.input-group
+            span.input-group-addon 标题
+            input(class='form-control',type='text',placeholder='请输入标题',required='',autofocus='',name='title')
+        p
+        div.input-group
+            span.input-group-addon 摘要
+            textarea(class='form-control',type='text',placeholder='请输入博客摘要',required='',autofocus='',name='abstract')
+        p
         include ../util/bootstrap_wysiwyg
-
         p
-            button(type='submit',class='btn btn-primary',style='width:200px;float: right;') 发布
+        button(type='submit',name='sub')
 block rightContent
-    h3 导航线信息
+    button(class='btn btn-primary',style='width:200px;float: right;',onclick='javascript:document.addBlog.sub.click()')
+        span.glyphicon.glyphicon-ok
+        &nbsp;&nbsp;发布

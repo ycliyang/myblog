@@ -2,11 +2,14 @@
    Created by Administrator on 2014/6/9.
 extends blog_content_layout
 block leftContent
-    if blogs.lengt>0
-        ul
-            for(blog in blogs)
-                li
-                    a blog.title
+
+    if blogs.length>0
+        ul.blog_list
+            each blog in blogs
+                div.input-group.bs-callout.bs-callout-info
+                    h4
+                        a(href='showBlog?id=#{blog.id}') #{blog.title}
+                    p!= blog.content
     else
         h3 暂无博客信息！
 
